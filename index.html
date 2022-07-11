@@ -14,27 +14,39 @@
     <title>Weather App</title>
   </head>
   <div class="container">
-    <h1>New York</h1>
-    <ul>
-      <li>Friday 05:00</li>
-      <li>Clear</li>
-    </ul>
-    <div class="row">
-      <div class="col-6">
-        <img
-          src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-          alt="clear"
-        />
-        15°C | °F
-      </div>
-      <div class="col-6">
-        <ul>
-          <li>Pricipitation: 0%</li>
-          <li>Humidity: 73%</li>
-          <li>Wind: 2m/s</li>
-        </ul>
+    <div class="weather-app-wrapper">
+      <div class="weather-app">
+        <div class="overview">
+          <h1>New York</h1>
+          <ul>
+            <li>Friday 05:00</li>
+            <li>Clear</li>
+          </ul>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="clearfix weather-temperature">
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                alt="clear"
+                class="float-left"
+              />
+              <span class="float-left">
+                <strong>15</strong><small class="units">°C | °F</small>
+              </span>
+            </div>
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>Pricipitation: 0%</li>
+              <li>Humidity: 73%</li>
+              <li>Wind: 2m/s</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
+
     <small> Thin code has been open sorced, and created by Niki Farkas </small>
   </div>
   <body></body>
