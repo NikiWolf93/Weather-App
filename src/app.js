@@ -37,7 +37,7 @@ function displayTemperature(response) {
 
   descriptionElement.innerHTML = response.data.weather[0].description;
   hunidityElement.innerHTML = `Humidity: ${response.data.main.humidity}%`;
-  windElement.innerHTML = `Wind: ${Math.round(response.data.wind.speed)}m/s`;
+  windElement.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} m/s`;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
@@ -46,8 +46,20 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "819bdbcfe78aaa2e79e6bdef77a5fff3";
-let city = "Turku";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "819bdbcfe78aaa2e79e6bdef77a5fff3";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-axios.get(apiUrl).then(displayTemperature);
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  console.log(cityInputElement);
+}
+
+search("Turku");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
