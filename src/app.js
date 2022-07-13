@@ -49,7 +49,7 @@ function displayTemperature(response) {
 
 function search(city) {
   let apiKey = "819bdbcfe78aaa2e79e6bdef77a5fff3";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayTemperature);
 }
@@ -80,10 +80,10 @@ function displayCelsiusTemperature(event) {
 
 let celsiusTemperature = null;
 
-search("Budapest");
+search("Turku");
 
 let form = document.querySelector("#search-form");
-form.addEventListener("submit", submit, handleSubmit);
+form.addEventListener("submit", handleSubmit);
 
 let farenheitLink = document.querySelector("#farenheit-link");
 farenheitLink.addEventListener("click", displayFarenheitTemperature);
