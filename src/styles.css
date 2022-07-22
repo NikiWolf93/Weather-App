@@ -76,7 +76,6 @@ li {
 
 .weather-temperature .active:hover {
   text-decoration: none;
-  color: rgb(135, 135, 135);
 }
 
 .weather-forecast {
